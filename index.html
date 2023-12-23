@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Password Generator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="author" content="Benjamin Jackson">
+        <link rel="stylesheet" href="./resources/css/reset.css">
+        <link rel="stylesheet" href="./resources/css/styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="title-container">
+                <h1>Password Generator</h1>
+            </div>
+        </header>
+        <main>
+            <div class="Password-generator">
+                <div class="password-screen">
+                    <img src="" alt="">    
+                </div>
+                <div class="password-length-container">
+                    <label class="password-length-label" for="length-slider">Password Length</label>
+                    <label class="Password-length" id="passwordLength" for="length-slider">Placeholder</label>
+                    <input type="range">
+                </div>
+                <div class="password-settings-container">
+                    <h2>Password Settings</h2>
+                    <div class="password-settings">
+                        <input type="checkbox" id="lowerCaseCheckbox" value="lowerCase">
+                        <label for="lowerCase">Lowercase letters(a-z)</label>
+                        <input type="checkbox" id="upperCaseCheckbox" value="upperCase">
+                        <label for="upperCase">Uppercase letters(A-Z)</label>
+                        <input type="checkbox" id="numberCheckbox" value="numbers">
+                        <label for="number" id="numberCheckbox">Numbers(0-9)</label>
+                        <input type="checkbox" id="symbolsCheckbox" value="symbols">
+                        <label for="symbolsCheckbox">Symbols(#$£&)</label>
+                    </div>
+                </div>
+                <button>Generate Password</button>
+            </div>
+        </main>
+        <footer>
+            <div>2023 Created by <a href="https://github.com/Bnjackson">Benjamin Jackson</a></div>
+        </footer>
+        <script src="./index.js"></script>
+    </body>
+</html>
