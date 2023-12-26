@@ -16,12 +16,12 @@
         </header>
         <main>
             <div class="password-generator">
-                <div class="password-screen">
+                <div class="password-screen" id="passwordScreen">
                     <img class="copy-button" id="copyButton" src="./resources/images/copy.svg" alt="Copy password to clipboard icon">    
                 </div>
                 <div class="password-length-container">
-                    <label class="password-length-label">Password Length</label>
-                    <label class="password-length" id="passwordLengthDisplay">8</label>
+                    <label for="passwordLengthRange" class="password-length-label">Password Length</label>
+                    <label for="passwordLengthRange" class="password-length" id="passwordLengthDisplay">8</label>
                     <br>
                     <input class="password-length-range" id="passwordLengthRange" min="1" max="20" value="8" type="range">
                 </div>
@@ -30,15 +30,15 @@
                     <div class="password-settings">
                         <div class="settings-container">
                             <input class="password-choices" type="checkbox" id="lowerCaseCheckbox" value="lowerCase">
-                            <label for="lowerCase">Lowercase letters (a-z)</label>
+                            <label for="lowerCaseCheckbox">Lowercase letters (a-z)</label>
                         </div>
                         <div class="settings-container">
                             <input class="password-choices" type="checkbox" id="upperCaseCheckbox" value="upperCase">
-                            <label for="upperCase">Uppercase letters (A-Z)</label>
+                            <label for="upperCaseCheckbox">Uppercase letters (A-Z)</label>
                         </div>
                         <div class="settings-container">
                             <input class="password-choices" type="checkbox" id="numberCheckbox" value="numbers">
-                            <label for="number" id="numberCheckbox">Numbers (0-9)</label>
+                            <label for="numberCheckbox" id="numberCheckbox">Numbers (0-9)</label>
                         </div>
                         <div class="settings-container">
                             <input class="password-choices" type="checkbox" id="symbolsCheckbox" value="symbols">
