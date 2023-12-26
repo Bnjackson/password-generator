@@ -50,21 +50,55 @@ function getPasswordSettings() {
 }
 
 function generatePassword(passwordSettings) {
+    let password = '';
+    const passwordLength = Number(passwordLengthDisplay.innerHTML);
+    for (let i = 0; i < passwordLength; i++) {
+        let randomNum = Math.floor(Math.random() * passwordSettings.length);
+        let randomlySelectedFunction = passwordSettings[randomNum];
+        password += randomlySelectedFunction();
+    }
+    displayPassword(password)
+}
 
+function displayPassword(password) {
+    const passwordNode = document.createTextNode(password);
+    // Need to remove text nodes each time a password is created. Otherwise passwords will stack. 
+    removeTextNodes()
+    passwordScreen.appendChild(passwordNode);
+    console.log(password);
+}
+
+function removeTextNodes() {
+    const childNodes = passwordScreen.childNodes;
+    for (let i = 0; i < childNodes.length; i++) {
+        if (childNodes[i].nodeType === 3) {
+            // Checks if it's a text node
+            passwordScreen.removeChild(childNodes[i]);
+            i--;
+        }
+    }
 }
 
 function generateLowerCase() {
-
+    const randomNum = Math.floor(Math.random() * (122 - 97 + 1) + 97);
+    const generatedLetter = String.fromCharCode(randomNum);
+    return generatedLetter;
 }
 
 function generateUpperCase() {
-
+    const randomNum = Math.floor(Math.random() * (90 - 65 + 1) + 65);
+    const generatedLetter = String.fromCharCode(randomNum);
+    return generatedLetter;
 }
 
 function generateNumber() {
-
+    const randomNum = Math.floor(Math.random() * (57 - 48 + 1) + 48);
+    const generatedNum = String.fromCharCode(randomNum);
+    return generatedNum;
 }
 
 function generateSymbol() {
-
+    const randomNum = Math.floor(Math.random() * (47 - 33 + 1) + 33);
+    const generatedSymbol = String.fromCharCode(randomNum);
+    return generatedSymbol;
 }
